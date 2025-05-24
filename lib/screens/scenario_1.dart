@@ -31,9 +31,7 @@ class _Scenario1PageState extends State<Scenario1Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Scenario #1"),
-      ),
+      appBar: AppBar(title: const Text("Scenario #1")),
       body: FutureBuilder(
         future: getData(),
         builder: (context, AsyncSnapshot<dynamic> snapshot) {
@@ -56,9 +54,7 @@ class _Scenario1PageState extends State<Scenario1Page> {
               },
             );
           }
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const Center(child: CircularProgressIndicator());
         },
       ),
       floatingActionButton: FloatingActionButton(

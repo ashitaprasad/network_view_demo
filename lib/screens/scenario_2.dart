@@ -38,16 +38,12 @@ class _Scenario2PageState extends State<Scenario2Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Scenario #1"),
-      ),
+      appBar: AppBar(title: const Text("Scenario #1")),
       body: FutureBuilder(
         future: _data,
         builder: (context, AsyncSnapshot<dynamic> snapshot) {
           if (snapshot.hasError) {
-            return Center(
-              child: Text(snapshot.error.toString()),
-            );
+            return Center(child: Text(snapshot.error.toString()));
           }
           if (snapshot.connectionState == ConnectionState.done &&
               snapshot.hasData) {
@@ -65,9 +61,7 @@ class _Scenario2PageState extends State<Scenario2Page> {
               },
             );
           }
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const Center(child: CircularProgressIndicator());
         },
       ),
       floatingActionButton: FloatingActionButton(

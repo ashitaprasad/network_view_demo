@@ -13,9 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Network View Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(useMaterial3: true),
       home: const MyHomePage(),
     );
   }
@@ -32,34 +30,34 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Network View Demo"),
-      ),
+      appBar: AppBar(title: const Text("Network View Demo")),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Scenario1Page(),
-                    ),
-                  );
-                },
-                child: const Text("Launch Scenario #1")),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Scenario1Page(),
+                  ),
+                );
+              },
+              child: const Text("Launch Scenario #1"),
+            ),
             const SizedBox(height: 10),
             ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Scenario2Page(),
-                    ),
-                  );
-                },
-                child: const Text("Launch Scenario #2"))
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Scenario2Page(),
+                  ),
+                );
+              },
+              child: const Text("Launch Scenario #2"),
+            ),
           ],
         ),
       ),

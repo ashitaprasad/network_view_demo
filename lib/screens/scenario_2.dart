@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'utils.dart';
+
 class Scenario2Page extends StatefulWidget {
   const Scenario2Page({super.key});
   @override
@@ -38,7 +40,7 @@ class _Scenario2PageState extends State<Scenario2Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Scenario #1")),
+      appBar: AppBar(title: const Text("Scenario #2")),
       body: FutureBuilder(
         future: _data,
         builder: (context, AsyncSnapshot<dynamic> snapshot) {
@@ -54,7 +56,9 @@ class _Scenario2PageState extends State<Scenario2Page> {
                 var cardData = data[index];
                 return Card(
                   child: ListTile(
-                    leading: Image.network(cardData['thumbnailUrl']),
+                    leading: Image.network(
+                      replaceUrl(cardData['thumbnailUrl']),
+                    ),
                     title: Text(cardData['title']),
                   ),
                 );

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'utils.dart';
+
 class Scenario1Page extends StatefulWidget {
   const Scenario1Page({super.key});
   @override
@@ -47,7 +49,9 @@ class _Scenario1PageState extends State<Scenario1Page> {
                 var cardData = data[index];
                 return Card(
                   child: ListTile(
-                    leading: Image.network(cardData['thumbnailUrl']),
+                    leading: Image.network(
+                      replaceUrl(cardData['thumbnailUrl']),
+                    ),
                     title: Text(cardData['title']),
                   ),
                 );
